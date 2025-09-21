@@ -1,6 +1,0 @@
-{
-  "version": 2,
-  "installCommand": "npm_config_ignore_scripts=false npm --prefix client ci",
-  "buildCommand": "npm --prefix client run build && mv client/.vercel .vercel",
-  "framework": "sveltekit"
-}
