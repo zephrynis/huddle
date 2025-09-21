@@ -1,0 +1,16 @@
+{
+    "name": "huddle",
+    "private": true,
+    "workspaces": [
+        "client"
+    ],
+    "scripts": {
+        "dev": "npm --prefix client run dev",
+        "build": "npm --prefix client run build",
+        "preview": "npm --prefix client run preview",
+        "client:dev": "npm --prefix client run dev",
+        "client:build": "npm --prefix client run build",
+        "client:preview": "npm --prefix client run preview",
+        "workspace:build": "npm --workspace=client run build"
+    }
+}
