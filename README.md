@@ -85,3 +85,40 @@ npm run <script-name> --workspace=<workspace-name>
 
 - Client: http://localhost:5173 (SvelteKit default)
 - Server: http://localhost:3000 (Express.js)
+
+## Deployment
+
+### Vercel (Client)
+
+The client (SvelteKit app) is configured for deployment on Vercel:
+
+1. The project uses `@sveltejs/adapter-vercel` for optimal Vercel integration
+2. `vercel.json` configures the build process for the monorepo structure
+3. Only the client workspace is deployed, server is ignored via `.vercelignore`
+
+To deploy manually:
+```bash
+npm run build:client  # Test the build locally first
+npx vercel           # Deploy to Vercel
+```
+
+### Server Deployment
+
+The Express.js server can be deployed to platforms like:
+- Railway
+- Render
+- Heroku
+- DigitalOcean App Platform
+
+Example for Railway:
+```bash
+cd server
+# Follow Railway deployment instructions
+```
+
+## Monorepo Structure
+
+This project uses npm workspaces for monorepo management:
+- Dependencies are installed at the root level when possible
+- Each workspace has its own `package.json`
+- Cross-workspace dependencies are automatically linked
